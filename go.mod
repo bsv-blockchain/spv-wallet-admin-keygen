@@ -1,12 +1,10 @@
-module github.com/bitcoin-sv/spv-wallet-admin-keygen
+module github.com/bsv-blockchain/spv-wallet-admin-keygen
 
-go 1.21
+go 1.24.0
 
-toolchain go1.21.4
-
-require github.com/bitcoin-sv/spv-wallet-go-client v0.5.0
+require github.com/bitcoin-sv/spv-wallet-go-client v0.10.0
 
 require (
 	github.com/libsv/go-bk v0.1.6 // indirect
-	golang.org/x/crypto v0.17.0 // indirect
+	golang.org/x/crypto v0.46.0 // indirect
 )
