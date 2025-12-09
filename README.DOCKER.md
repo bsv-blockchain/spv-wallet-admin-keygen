@@ -1,6 +1,6 @@
 # SPV Wallet Admin Keygen
 
-This tool generates public and private key pairs for SPV Wallet applications. 
+This tool generates public and private key pairs for SPV Wallet applications.
 It can just print those keys or by default store it in the Kubernetes secret.
 
 ## Printing Keys
