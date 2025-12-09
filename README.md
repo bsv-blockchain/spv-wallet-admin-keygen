@@ -8,7 +8,7 @@
 
 <a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/releases"><img src="https://img.shields.io/github/release-pre/bsv-blockchain/spv-wallet-admin-keygen?include_prereleases&style=flat-square&logo=github&color=black" alt="Release"></a>
 <a href="https://golang.org/"><img src="https://img.shields.io/github/go-mod/go-version/bsv-blockchain/spv-wallet-admin-keygen?style=flat-square&logo=go&color=00ADD8" alt="Go Version"></a>
-<a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-OpenBSV-blue?style=flat-square" alt="License"></a>
+<a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-OpenBSV-blue?style=flat-square" alt="License"></a>
 
 <br/>
 
@@ -18,7 +18,7 @@
        <code>CI / CD</code> &nbsp;&nbsp;
     </td>
     <td align="left">
-       <a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/actions"><img src="https://img.shields.io/github/actions/workflow/status/bsv-blockchain/spv-wallet-admin-keygen/fortress.yml?branch=master&label=build&logo=github&style=flat-square" alt="Build"></a>
+       <a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/actions"><img src="https://img.shields.io/github/actions/workflow/status/bsv-blockchain/spv-wallet-admin-keygen/fortress.yml?branch=main&label=build&logo=github&style=flat-square" alt="Build"></a>
        <a href="https://github.com/bsv-blockchain/spv-wallet-admin-keygen/actions"><img src="https://img.shields.io/github/last-commit/bsv-blockchain/spv-wallet-admin-keygen?style=flat-square&logo=git&logoColor=white&label=last%20update" alt="Last Commit"></a>
     </td>
     <td align="right">
@@ -26,7 +26,7 @@
     </td>
     <td align="left">
        <a href="https://goreportcard.com/report/github.com/bsv-blockchain/spv-wallet-admin-keygen"><img src="https://goreportcard.com/badge/github.com/bsv-blockchain/spv-wallet-admin-keygen?style=flat-square" alt="Go Report"></a>
-       <a href="https://codecov.io/gh/bsv-blockchain/spv-wallet-admin-keygen"><img src="https://codecov.io/gh/bsv-blockchain/spv-wallet-admin-keygen/branch/master/graph/badge.svg?style=flat-square" alt="Coverage"></a>
+       <a href="https://codecov.io/gh/bsv-blockchain/spv-wallet-admin-keygen"><img src="https://codecov.io/gh/bsv-blockchain/spv-wallet-admin-keygen/branch/main/graph/badge.svg?style=flat-square" alt="Coverage"></a>
     </td>
   </tr>
 
@@ -260,7 +260,7 @@ The release process is defined in the [.goreleaser.yml](.goreleaser.yml) configu
 Then create and push a new Git tag using:
 
 ```bash
-magex version:bump push=true bump=patch branch=master
+magex version:bump push=true bump=patch branch=main
 ```
 
 This process ensures consistent, repeatable releases with properly versioned artifacts and citation metadata.
