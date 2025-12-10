@@ -92,7 +92,7 @@ jobs:
       # Check out code to access env file
       # --------------------------------------------------------------------
       - name: 📥 Checkout code (sparse)
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           sparse-checkout: |
             .github/.env.base
@@ -330,7 +330,7 @@ jobs:
             echo "|-----------|--------|--------|"
             echo "| 🎯 Setup | ${{ needs.setup.result }} | Required |"
             echo "| 🪄 MAGE-X | ${{ needs.test-magex.result }} | Required |"
-            echo "| 💾 Warm Cache | ${{ needs.warm-cache.result }} | ${{ needs.setup.outputs.cache-warming-enabled == 'true' && 'Optional' || 'Skipped' }} |"
+            echo "| 💾 Warm Cache | ${{ needs.warm-cache.result }} | ${{ needs.setup.outputs.cache-warming-enabled == 'true' && 'Required' || 'Disabled' }} |"
             echo "| 🔒 Security | ${{ needs.security.result }} | Required |"
             echo "| 📊 Code Quality | ${{ needs.code-quality.result }} | Required |"
             echo "| 🪝 Pre-commit | ${{ needs.pre-commit.result }} | ${{ needs.setup.outputs.pre-commit-enabled == 'true' && 'Required' || 'Skipped' }} |"
@@ -361,6 +361,14 @@ jobs:
           if [[ "${{ needs.test-magex.result }}" == "failure" || "${{ needs.test-magex.result }}" == "cancelled" ]]; then
             echo "❌ Test MAGE-X failed or was cancelled" >&2
             FAILED=true
+          fi
+
+          # Only check warm-cache if it was enabled
+          if [[ "${{ needs.setup.outputs.cache-warming-enabled }}" == "true" ]]; then
+            if [[ "${{ needs.warm-cache.result }}" == "failure" || "${{ needs.warm-cache.result }}" == "cancelled" ]]; then
+              echo "❌ Warm cache failed or was cancelled" >&2
+              FAILED=true
+            fi
           fi
 
           if [[ "${{ needs.security.result }}" == "failure" || "${{ needs.security.result }}" == "cancelled" ]]; then
@@ -439,7 +447,11 @@ jobs:
   # ----------------------------------------------------------------------------------
   completion-report:
     name: 📊 Workflow Completion Report
-    if: always() && !contains(fromJSON('["failure", "cancelled"]'), needs.setup.result) && !contains(fromJSON('["failure", "cancelled"]'), needs.test-magex.result)
+    if: |
+      always() &&
+      needs.setup.outputs.completion-report-enabled == 'true' &&
+      !contains(fromJSON('["failure", "cancelled"]'), needs.setup.result) &&
+      !contains(fromJSON('["failure", "cancelled"]'), needs.test-magex.result)
     needs: [load-env, setup, test-magex, pre-commit, security, code-quality, test-suite, benchmarks, release, status-check]
     permissions:
       contents: read # Read repository content for completion report
