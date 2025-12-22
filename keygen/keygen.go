@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/bitcoin-sv/spv-wallet-go-client/xpriv"
+	"github.com/bsv-blockchain/spv-wallet-go-client/walletkeys"
 )
 
 // KeyPair holds generated xpub and xpriv keys.
@@ -16,13 +16,13 @@ type KeyPair struct {
 
 // Generate creates a new key pair.
 func Generate() (*KeyPair, error) {
-	keys, err := xpriv.Generate()
+	keys, err := walletkeys.RandomKeys()
 	if err != nil {
 		return nil, fmt.Errorf("failed to generate keys: %w", err)
 	}
 
 	return &KeyPair{
-		xpub:  keys.XPub().String(),
+		xpub:  keys.XPub(),
 		xpriv: keys.XPriv(),
 	}, nil
 }
