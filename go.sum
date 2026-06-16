@@ -1,7 +1,7 @@
 github.com/bsv-blockchain/go-sdk v1.2.24 h1:lUUcOQirAmmnJfUOQtNIWy0fVGBgSdisLOstouCvrGg=
 github.com/bsv-blockchain/go-sdk v1.2.24/go.mod h1:yTDARQK2SJBod2w+10/Rtu5VdyBFn7gkOwNbnI2zplg=
-github.com/bsv-blockchain/spv-wallet-go-client v1.2.0 h1:EAqrbcSfsvigQ3wSFMhkFM88nAlzzMz1mo42eRPZZQY=
-github.com/bsv-blockchain/spv-wallet-go-client v1.2.0/go.mod h1:CpzVvYHoVow7XkQJbv+PoVg+fklvn5zoYzA2RLZwbkk=
+github.com/bsv-blockchain/spv-wallet-go-client v1.2.1 h1:blBsNNaTkt3WqTh/b+tGGg+coumQoFItwVA1Sk9EZ4c=
+github.com/bsv-blockchain/spv-wallet-go-client v1.2.1/go.mod h1:Kyf7OjSWjuiNHhG6vbJgUOSYOlJvyzg8hIoZpuR4QI0=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
