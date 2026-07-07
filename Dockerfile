@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
         CGO_ENABLED=0 go build -ldflags="-s -w" -v -o dist/$TARGETPLATFORM/$project_name; \
     fi
 
-FROM --platform=$TARGETPLATFORM bitnami/kubectl:latest@sha256:cd9daa0cc6968665402654b887bdc59aba0f774d0d0a36808eb9259fb642aa5c AS final
+FROM --platform=$TARGETPLATFORM bitnami/kubectl:latest@sha256:a67b11e95e953f550f020a41970185ccc5f83d78b86b8c575d02c904aa0f9cd7 AS final
 ARG TARGETPLATFORM
 ARG project_name=generator
 ARG build_in_docker=false
