@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/bsv-blockchain/spv-wallet-go-client v1.2.1
 
 require (
-	github.com/bsv-blockchain/go-sdk v1.3.0 // indirect
+	github.com/bsv-blockchain/go-sdk v1.3.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	golang.org/x/crypto v0.54.0 // indirect
 )
