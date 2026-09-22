@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM --platform=$TARGETPLATFORM golang:1.27@sha256:f44f6e88636cfb311f9ebace870ded69d943f227bb3cb27d32ffd84ea18c43ea AS build
+FROM --platform=$TARGETPLATFORM golang:1.27@sha256:3680233e3204827fbdc66088528ae6d4b3d034f51d03a99d454f6de034888244 AS build
 ARG TARGETPLATFORM
 ARG project_name=generator
 ARG build_in_docker=false
@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/go/pkg/mod/ \
         CGO_ENABLED=0 go build -ldflags="-s -w" -v -o dist/$TARGETPLATFORM/$project_name; \
     fi
 
-FROM --platform=$TARGETPLATFORM bitnami/kubectl:latest@sha256:b29d8c1665b70817259ceecaea16ab27aab6368b48daf485d19436c809067492 AS final
+FROM --platform=$TARGETPLATFORM bitnami/kubectl:latest@sha256:6e9c5284a0dac06e84de9f4d97852d2e6513442ee7ec3a66d35009eec86e1e62 AS final
 ARG TARGETPLATFORM
 ARG project_name=generator
 ARG build_in_docker=false
