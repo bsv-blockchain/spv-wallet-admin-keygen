@@ -134,28 +134,3 @@ updates:
     cooldown:
       default-days: 3
       exclude: ["golang"]
-
-  # ──────────────────────────────────────────────────────────────
-  # 5. Docker Compose (compose.yaml)
-  # ──────────────────────────────────────────────────────────────
-  - package-ecosystem: "docker-compose"
-    directory: "/"
-    target-branch: "main"
-    schedule:
-      interval: "weekly"
-      day: "tuesday"
-      time: "12:00"
-      timezone: "America/New_York"
-    allow:
-      - dependency-type: "direct"
-    groups:
-      compose-all:
-        patterns: ["*"]
-    open-pull-requests-limit: 5
-    assignees: ["mrz1836"]
-    labels: ["chore", "dependencies", "docker-compose"]
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    cooldown:
-      default-days: 3
